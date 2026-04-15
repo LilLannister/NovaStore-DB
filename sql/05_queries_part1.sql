@@ -30,3 +30,12 @@ INNER JOIN Products
 INNER JOIN Categories
     ON Products.CategoryID=Categories.CategoryID
 WHERE Customers.FullName = 'Ahmet Yılmaz';
+GO
+
+SELECT 
+    Categories.CategoryName,
+    COUNT (Products.ProductID) AS ProductCount
+FROM Categories
+LEFT JOIN Products
+    ON Categories.CategoryID=Products.CategoryID
+GROUP BY Categories.CategoryName;
