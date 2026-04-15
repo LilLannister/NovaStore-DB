@@ -49,3 +49,11 @@ INNER JOIN Orders
     ON Customers.CustomerID=Orders.CustomerID
 GROUP BY Customers.FullName
 ORDER BY TotalRevenue DESC;
+GO
+
+SELECT 
+    OrderID,
+    OrderDate,
+    DATEDIFF(DAY,OrderDate,GETDATE()) AS DaysPassed
+FROM Orders
+ORDER BY OrderDate;
