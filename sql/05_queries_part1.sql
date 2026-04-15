@@ -39,3 +39,13 @@ FROM Categories
 LEFT JOIN Products
     ON Categories.CategoryID=Products.CategoryID
 GROUP BY Categories.CategoryName;
+GO
+
+SELECT
+    Customers.FullName,
+    SUM (Orders.TotalAmount) AS TotalRevenue
+FROM Customers 
+INNER JOIN Orders
+    ON Customers.CustomerID=Orders.CustomerID
+GROUP BY Customers.FullName
+ORDER BY TotalRevenue DESC;
