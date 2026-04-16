@@ -1,4 +1,3 @@
--- 1. DB Oluştur
 CREATE DATABASE NovaStoreDB;
 GO
 
